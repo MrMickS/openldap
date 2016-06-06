@@ -78,9 +78,9 @@ if node['platform_family'] == 'debian'
     source 'default_slapd.erb'
     owner 'root'
     group node['root_group']
-    variables {
-    	slapd_services=slapd_services
-    }
+    variables (
+    	slapd_services: slapd_services
+    )
     mode '0644'
   end
 
