@@ -66,9 +66,9 @@ if node['openldap']['tls_enabled'] && node['openldap']['manage_ssl']
 end
 
 
-if node['platform_family'] == 'debian' do
+if node['platform_family'] == 'debian' 
 
-  if node['openldap']['tls_enabled'] do
+  if node['openldap']['tls_enabled']
   	slapd_services="ldap:/// ldapi:/// ldaps:///"
   else
   	slapd_services="ldap:/// ldapi:///"
