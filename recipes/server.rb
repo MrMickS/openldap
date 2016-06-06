@@ -68,19 +68,10 @@ end
 
 if node['platform_family'] == 'debian' 
 
-  if node['openldap']['tls_enabled']
-  	slapd_services="ldap:/// ldapi:/// ldaps:///"
-  else
-  	slapd_services="ldap:/// ldapi:///"
-  end
-
   template '/etc/default/slapd' do
     source 'default_slapd.erb'
     owner 'root'
     group node['root_group']
-    variables (
-    	slapd_services: slapd_services
-    )
     mode '0644'
   end
 
